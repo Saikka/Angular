@@ -1,0 +1,68 @@
+a {
+    color: rgb(180, 180, 180);
+}
+
+input {
+    width: 100%;
+}
+
+div.row {
+    margin: 0;
+}
+
+div.list-group-item {
+    background-color: rgb(34, 34, 34);
+    color: rgb(150, 150, 150);
+    border: 1px solid black;
+}
+
+div.categories {
+    padding: 0;
+    height: 93vh;
+    background-color: rgb(34, 34, 34);
+}
+
+div.search {
+    width: 90%;
+}
+
+i {
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    background-color: rgb(34, 34, 34);
+}
+
+.dropdown-menu li a {
+    color: rgb(150, 150, 150);
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+
+.btn {
+    background-color: rgb(34, 34, 34);
+    color: rgb(150, 150, 150);
+    border: solid 1px rgb(150, 150, 150);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:hover {
+    color: white;
+}
+
+#add {
+    width: 40%;
+}
+
+#edit {
+    width: 55%;
+    margin-left: 5%;
+}

@@ -1,0 +1,31 @@
+<div class="image">
+    <div class="pull-left">
+        <h4>{{ recipe.name }}</h4>
+    </div>
+    <div class="pull-right"  *ngIf="isEdit && recipe.edit">
+        <i class="glyphicon glyphicon-edit" (click)="onEdit()"></i>
+        <i class="glyphicon glyphicon-trash" (click)="onDelete()"></i>
+    </div>
+    <img src="{{image}}" style="width: 300px; height: 200px;">
+</div>
+<div class="col-xs-4 media" *ngIf="recipe.ingredients.length != 0">
+    <div class="pull-left"><h4>Ingredients:</h4></div>
+    <div class="pull-right">
+        <i class="glyphicon glyphicon-minus" (click)="multiplyerChange('-')"></i>
+        <p>{{ multiplyer }}x</p>
+        <i class="glyphicon glyphicon-plus" (click)="multiplyerChange('+')"></i>
+    </div>
+    <ul class="leaders list-group">
+        <li *ngFor="let ingredient of recipe.ingredients">
+            <span>{{ ingredient.name }}</span><span>{{ ingredient.amount * multiplyer }} {{ ingredient.units }}</span>
+        </li>
+    </ul>
+</div>
+<div class="col-xs-8 media" *ngIf="recipe.steps.length != 0">
+    <h4>Instructions:</h4>
+    <ol class="list-group">
+        <li class="list-steps" *ngFor="let step of recipe.steps">
+            {{ step.description }}
+        </li>
+    </ol>
+</div>

@@ -1,0 +1,35 @@
+body {
+    width: 100vw;
+    background-color: rgb(60, 60, 60);
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+    color: rgb(150, 150, 150);
+}
+
+label {
+    color: rgb(150, 150, 150);
+}
+
+a {
+    color: rgb(180, 180, 180);
+}
+
+.btn {
+    width: 100px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(150, 150, 150);
+    border: solid 1px rgb(150, 150, 150);
+    margin-right: 10px;
+}
+
+.btn:focus {
+    outline: 0;
+    color: rgb(150, 150, 150);
+}
+
+.btn:hover {
+    color: white;
+}

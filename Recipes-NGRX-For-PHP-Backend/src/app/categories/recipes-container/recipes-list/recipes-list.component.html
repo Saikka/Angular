@@ -1,0 +1,11 @@
+<div  class="col-xs-7">
+    <div class="recipe"
+        style="cursor: pointer;"
+        routerLink="/recipes/recipe/new"
+        routerLinkActive="active">
+        <img src="assets/plus.png" alt="">
+        <h5>Add recipe</h5>
+    </div>
+    <app-recipe *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe>
+    <h4 *ngIf="search"> No recipes found! </h4>
+</div>

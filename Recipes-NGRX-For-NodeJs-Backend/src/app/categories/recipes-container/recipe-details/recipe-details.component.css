@@ -1,0 +1,87 @@
+.image {
+    float: left;
+    width: 300px;
+    margin: 2rem 2rem 0 2rem;
+}
+
+.col-xs-8 .col-xs-4 {
+    margin: 2rem 0 0 2rem;
+    padding: 0;
+}
+
+div.list-group-item {
+    background-color: rgb(60, 60, 60);
+    color: white;
+    height: 30px;
+    padding: 0;
+    border: none;
+}
+
+h4 {
+    color: white;
+}
+
+p {
+  display: block;
+  float: left;
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+}
+
+i {
+  margin-top: 10px;
+  float: left;
+  color: white;
+  cursor: pointer;
+}
+
+ul.leaders {
+    background-color: rgb(60, 60, 60);
+    color: white;
+    list-style-type: none;
+}
+
+ul.leaders li { 
+    clear: both;
+ }
+
+ul.leaders li span:first-child {
+  float: left;
+  padding: 0 .4em 0 0;
+  margin: 0;
+}
+ul.leaders li span + span {
+  float: right;
+  padding: 0 0 0 .4em;
+  margin: 0;
+}
+
+ul.leaders li:after {
+  content: "";
+  display: block;
+  overflow: hidden;
+  height: 1em;
+  border-bottom: 1px dotted;
+}
+
+i {
+  margin-left: 10px;
+}
+
+.list-group-item {
+  background-color: rgb(60, 60, 60);
+  height: fit-content;
+  color: white;
+}
+
+.list-steps {
+  color: white;
+  margin-left: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .media {
+      width: 90%;
+  }
+}

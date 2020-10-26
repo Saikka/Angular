@@ -1,0 +1,14 @@
+<div class="list-group-item">
+  <div class="pull-left">
+    <a style="cursor: pointer;"
+    [class.closed]="!isEdit" [class.opened]="isEdit"
+    [routerLink]="[type, category._id]"
+    routerLinkActive="active">
+        <h4 class="list-group-item-heading"> {{ category.name }} </h4>
+    </a>
+  </div>
+  <div class="pull-right" *ngIf="isEdit && category.edit">
+      <i class="glyphicon glyphicon-edit" (click)="onEdit()"></i>
+      <i class="glyphicon glyphicon-trash" (click)="onDelete()"></i>
+  </div>
+</div>

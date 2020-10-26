@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="pull-left categories" [class.col-xs-3]="!isEdit" [class.col-xs-4]="isEdit">
+        <div class="list-group-item clearfix">
+            <h4>Recipes</h4>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ type }}<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a (click)="onChangeType('category')" style="cursor: pointer;">By category</a></li>
+                <li><a (click)="onChangeType('country')" style="cursor: pointer;">By country</a></li>
+            </ul>
+        </div>
+        <div class="list-group-item clearfix">
+            <div class="pull-left search">
+                <input type="text" [(ngModel)]="searchValue">
+            </div>
+            <div class="pull-right">
+                <i class="glyphicon glyphicon-search" (click)="onSearch()"></i>
+            </div>
+        </div>
+        <div class="list-group-item clearfix">
+            <button class="edit" id="add" type="button" (click)="onAddCategory()">Add category</button>
+            <button class="edit" id="edit" type="button" (click)="onEditCategories()">Change categories</button>
+        </div>
+        <div class="list-group-item clearfix">
+            <a style="cursor: pointer;"
+            routerLink="./all"
+            routerLinkActive="active">
+                <h4 class="list-group-item-heading"> All recipes </h4>
+            </a>
+        </div>
+        <app-category *ngFor="let category of categories; let i = index" 
+            [category] ="category" [isEdit] = "isEdit"></app-category>
+    </div>
+    <div class="col-xs-*">
+        <router-outlet></router-outlet>
+    </div>
+</div>

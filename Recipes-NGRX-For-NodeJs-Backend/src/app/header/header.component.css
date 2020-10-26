@@ -1,0 +1,9 @@
+nav {
+    margin: 0;
+}
+
+.active:active {
+    background-color: rgb(34, 34, 34);
+    outline: 0;
+    border: none;
+}

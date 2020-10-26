@@ -1,0 +1,30 @@
+h4 {
+    color: white;
+    margin: 10px;
+}
+
+.recipe {
+    float: left;
+    width: 120px;
+    background-color: rgb(34, 34, 34);
+    margin: 10px;
+    padding: 0;
+    border: solid 1px black;
+}
+
+.recipe img {
+    width: 120px;
+    height: 90px;
+    display: block;
+}
+
+.recipe h5 {
+    text-align: center;
+    color: rgb(150, 150, 150);
+}
+
+@media only screen and (max-width: 768px) {
+    .list {
+        width: 100%;
+    }
+}

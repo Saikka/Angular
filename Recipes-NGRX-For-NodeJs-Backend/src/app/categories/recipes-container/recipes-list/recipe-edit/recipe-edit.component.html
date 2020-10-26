@@ -1,0 +1,75 @@
+<div class="col-xs-7 media">
+    <h4 *ngIf="!editMode">Add new recipe </h4>
+    <h4 *ngIf="editMode"><b>{{recipe.name}}</b> </h4>
+    <ul class="nav nav-tabs">
+        <li [className]="tab==='main' ? 'active' : ''"><a (click)="onTabChange('main')">Main info</a></li>
+        <li [className]="tab==='ingredients' ? 'active' : ''"><a (click)="onTabChange('ingredients')">Ingredients</a></li>
+        <li [className]="tab==='steps' ? 'active' : ''"><a (click)="onTabChange('steps')">Steps</a></li>
+    </ul>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="alert alert-danger" *ngIf="error">
+            <p>{{ error }}</p>
+        </div>
+        <div *ngIf="tab ==='main'" style="width: 80%; margin-top: 1rem;">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="name">
+            <label for="image">Image</label>
+            <img src="{{image}}" style="width: 150px; height: 100px;" *ngIf="editMode">
+            <label for="image" class="image-input" *ngIf="editMode">Update image</label>
+            <input type="file" class="form-control" [class.image-input]="editMode" formControlName="image"
+            (change)="handleFileInput($event.target.files)">
+            <label for="difficulty">Difficulty</label>
+            <select name="difficulty" class="form-control" formControlName="difficulty">
+                <option *ngFor="let item of difficulty; let i = index;" [ngValue]="i+1">{{item}}</option>
+            </select>
+            <label for="category">Category</label>
+            <select name="category" class="form-control" formControlName="category">
+                <option value="0">None</option>
+                <option *ngFor="let category of categories;" value="{{category._id}}">{{category.name}}</option>
+            </select>
+            <label for="country">Country</label>
+            <select name="country" class="form-control" formControlName="country">
+                <option value="0">None</option>
+                <option *ngFor="let country of countries;" value="{{country._id}}">{{country.name}}</option>
+            </select>
+        </div>
+        <div formArrayName="ingredients" *ngIf="tab === 'ingredients'">
+            <div class="buttons">
+                <button type="button" class="btn fit" (click)="onAddIngredient()">Add ingredient</button>
+            </div>
+            <div class="row" *ngFor="let ingredientCtrl of ingredientsControls; let i=index" 
+                [formGroupName]="i" style="margin-top:10px;">
+                <div class="col-xs-6">
+                    <input type="text" formControlName="name" class="form-control">
+                </div>
+                <div class="col-xs-2">
+                    <input type="number" formControlName="amount" class="form-control">
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" formControlName="units" class="form-control">
+                </div>
+                <div class="col-xs-2">
+                    <button type="button" class="btn fit" (click)="onDeleteIngredient(i)">X</button>
+                </div>
+            </div>
+        </div>
+        <div formArrayName="steps" *ngIf="tab === 'steps'">
+            <div class="buttons">
+                <button type="button" class="btn fit" (click)="onAddStep()">Add step</button>
+            </div>
+            <div class="row" *ngFor="let stepCtrl of stepsControls; let i=index" 
+                [formGroupName]="i" style="margin-top:10px;">
+                <div class="col-xs-10">
+                    <textarea cols="30" rows="1" formControlName="description" class="form-control"></textarea>
+                </div>
+                <div class="col-xs-2">
+                    <button type="button" class="btn fit" (click)="onDeleteStep(i)">X</button>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="btn" type="submit" [disabled]="!form.valid">Save</button>
+            <button class="btn" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>

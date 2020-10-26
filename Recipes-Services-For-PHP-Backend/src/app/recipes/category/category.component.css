@@ -1,0 +1,39 @@
+.list-group-item {
+    height: 40px;
+    background-color: rgb(34, 34, 34);
+    border: 1px solid black;
+}
+
+.pull-right {
+    width: 50px;
+}
+
+a:hover {
+    background-color: rgb(34, 34, 34);
+    text-decoration: none;
+}
+
+.active {
+    border: none;
+    text-decoration: none;
+}
+
+h4.list-group-item-heading {
+    color: rgb(150, 150, 150);
+}
+
+h4.list-group-item-heading:hover {
+    color: white;
+}
+
+i {
+    margin-left: 10px;
+}
+
+.closed {
+    width: 100%;
+}
+
+.opened {
+    width: 85%;
+}

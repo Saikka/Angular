@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-xs-6 media">
+        <div class="alert alert-success" *ngIf="message">
+            <p>{{ message }}</p>
+        </div>
+        <div class="alert alert-danger" *ngIf="error">
+            <p>{{ error }}</p>
+        </div>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <label for="login">Login</label>
+            <input type="text" class="form-control" ngModel name="login" required>
+            <label for="password">Password</label>
+            <input type="text" class="form-control" ngModel name="password" required>
+            <div *ngIf="!login">
+                <label for="password_confirm">Confirm password</label>
+                <input type="text" class="form-control" ngModel name="password_confirm" required>
+            </div>
+            <div class="buttons">
+                <button class="btn" type="submit" [disabled]="!f.valid">{{ login == true ? 'Login' : 'Signup' }}</button>
+                <button class="btn" type="button" (click)="onCancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
